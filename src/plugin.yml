@@ -1,0 +1,4 @@
+name: KratosCore
+main: me.kratoscore.net.bukkit.KratosCore
+version: 2.9
+author: Crivity

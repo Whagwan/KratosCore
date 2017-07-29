@@ -1,0 +1,364 @@
+#______________________________________________________________________________#
+# VERY IMPORTANT:
+# Remove the following Modules from your modules.yml AND from your Modules folder
+# - cmd_alert
+# - cmd_glist
+# - cmd_server
+# REMOVE THOSE, AND THE COMMANDS WILL BE OVERRIDDEN
+# Otherways, KratosCore isn't able to override those commands as it's a module.
+#_________________________________________________________________________________#
+
+# Do you want to store the players with their UUID or name? To have name storage, set to false, to use UUID storage, set on true.
+# UUID Storage is highly recommended for premium servers, because of name changes.
+# Name storage is recommended for cracked servers.
+UUID-Storage: true
+
+# This is the Prefix, for the most messages & alert prefix!
+Prefix: '&e&lKratosCore &8» &r'
+
+# This is a system that allows you to connect to the Bukkit server you are in to ask if you have the permission!
+Bukkit-Permissions: false
+
+# VERY IMPORTANT! MYSQL NEEDS TO BE ENABLED AND GOOD THINGS NEED TO BE FILLED IN!
+# While MySQL being disabled, the Ban, Report & Friend system will not be loaded!
+MySQL:
+  Enabled: false
+  Host: '127.0.0.1'
+  Port: 3306
+  Database: 'database'
+  Username: 'username'
+  Password: 'password'
+
+# This are the main message, for the main & oldest commands (like /alert).
+Main-messages:
+  # this is the message when a player doesn't have the right permission!
+  no-permission: '&cYou do not have the permission to use this command!'
+
+  # This is the message when you are already connected to a server.
+  already-connected: '&cYou are already connected to this server!'
+
+  # This is the Message being shown if you type /server!
+  server-message: '&7Hello &a%player%&7, you are now connected to &a%servername%&7!'
+
+  # This is the message being show while a player is offline.
+  # Currently only used by /find command.
+  offline-player: '&cThat player is not online!'
+
+  # This is the message being show if you use /find!
+  find-message: '&7Hello &a%player%&7, &a%target% &7is online in &a%server%&7!'
+
+  # This is the message if someone entered the wrong args for the /find command.
+  use-find: '&cPlease use /find (playername)!'
+
+  # The Message if a Server Switch is successfull!
+  sended-message: '&7Hello &a%player%&7, you have been connected to &a%server%&7!'
+
+  # The message if someone is using /server (servername), and that server does not exist!
+  no-server: '&cThat server does not exist!'
+
+  # This is the message if someone entered the wrong args for the /server command.
+  use-server: '&cPlease use /server or /server (servername)!'
+
+# This is the part for the Big Alert Command. (Chat & Title).
+BigAlert:
+  Messages:
+    KratosCore: '&e&lThis server is using KratosCore!'
+  Chat:
+    Enabled: true
+  ActionBar:
+    Enabled: true
+  Title:
+    Enabled: true
+    FadeIn: 30
+    Stay: 60
+    FadeOut: 30
+
+LocalSpy:
+  Aliases:
+  - commandspy
+  Messages:
+    Usage: '&4Please use /localspy'
+    Format: '&b%player% &6executed the command &b%command%'
+    Enabled: '&6Your localspy has been &benabled&6!'
+    Disabled: '&6Your localspy has been &bdisabled&6!'
+
+PrivateMessages:
+  MSG:
+    Aliases:
+    - gtell
+    - gw
+    - gwhisper
+    Messages:
+      WrongUsage: '&4Please use /gmsg (player) (message)!'
+      OfflineTarget: '&4That player is not online!'
+      Format:
+        Receiving: '&8[&6%player% &c» &6Me&8] &r%message%'
+        Sending: '&8[&6Me &c» &6%player%&8] &r%message%'
+  Reply:
+    Aliases:
+    - gr
+    Messages:
+      WrongUsage: '&4Please use /greply (message)!'
+      NoTarget: '&4You have nobody to reply to!'
+      OfflineTarget: '&4That player is not online anymore!'
+      Format:
+        Receiving: '&8[&6%player% &c» &6Me&8] &r%message%'
+        Sending: '&8[&6Me &c» &6%player%&8] &r%message%'
+  Spy:
+    Aliases:
+    - gsocialspy
+    Messages:
+      WrongUsage: '&4Please use /gspy!'
+      Enabled: '&6Your socialspy has been &benabled&6!'
+      Disabled: '&6Your socialspy has been &bdisabled&6!'
+      Format: '&8[&6%sender% &c» &6%receiver%&8] &r%message%'
+
+# This is the format of the StaffChat command.
+StaffChat:
+  Enabled: true
+  Format: '&4[&9%server%&4] &6%player%&c: %message%'
+  ChatEnabled: '&2You are now talking in the Staff Chat!'
+  ChatDisabled: '&2You are not talking in the Staff Chat anymore!'
+
+# This is the messages part for the clearchat command.
+ClearChat:
+  Enabled: true
+  Local: '&cThe local chat has been cleared by a Staff Member!'
+  Global: '&cThe global chat has been cleared by a Staff Member!'
+
+ChatLock:
+  Lock: '&7The Chat has been Locked.'
+  Unlock: '&7The Chat has been unlocked.'
+  Locked: '&7The Chat has been locked. You cannot talk right now.'
+  # Set to true to enable /chat lock.
+  ChatCommand:
+    Enabled: true
+    WrongArgs: '&cPlease use /chat lock'
+  Broadcast:
+    Enabled: true
+    Lock:
+      - '&4------------------------------------------'
+      - '&c        The Chat has been Locked!         '
+      - '&4------------------------------------------'
+    UnLock:
+      - '&4------------------------------------------'
+      - '&c      The Chat has been Unlocked!         '
+      - '&4------------------------------------------'
+
+# Hub Command Section
+Hub:
+  Enabled: false
+  # The Server in the BungeeCord Config!
+  Server: Hub
+  # The Custom Command.
+  Command: 'hub;lobby'
+  # The Custom Message
+  Message: '&cYou have been connected to the hub!'
+  # This is the Message if someone is already connected to the hub.
+  inHub: '&cYou are already in the hub!'
+
+# The Rules Section
+Rules:
+  # Enable / disable the /rules command over here!
+  Enabled: true
+
+  # List your rules below!
+  Rules:
+  - '&aYour first rule!'
+  - '&eYour second rule!'
+
+  # The text shown below the rules!
+  Text: '&3Found rule breaker? &bClick Here to report them!'
+
+  # The Hover text of the Text message.
+  Hover: 'www.kratosnetwork.net '
+
+  # The Linked site if you click on the text message!
+  Site: 'www.kratosnetwork.net'
+
+  # The Header of the Rules Message.
+  Header: '&7&l&m========================================='
+
+  # The Footer of the Rules Message.
+  Footer: '&7&l&m========================================='
+
+Vote:
+  # Enable / disable the /vote command over here!
+  Enabled: true
+
+  # List your Vote Links below!
+  Links:
+  - '&aYour first link!'
+  - '&eYour second link!'
+
+  # The text shown below the links!
+  Text: '&3Go to one of the links above to Vote for our server ;)'
+
+  # The Hover text of the Text message.
+  Hover: 'This Message will send you to our Main Vote Site'
+
+  # The Linked site if you click on the text message!
+  Site: 'www.example.com/vote'
+
+  # The Header of the Vote Message.
+  Header: '&7&l&m========================================='
+
+  # The Footer of the Vote Message.
+  Footer: '&7&l&m========================================='
+
+Store:
+  # Enable / disable the /store command over here!
+  Enabled: true
+
+  # List the command messages below!
+  Message:
+  - '&aDonate to support us and to keep our server!'
+  - '&eIt really helps!'
+
+  # The text shown below the message!
+  Text: '&3Donate to support our server!'
+
+  # The Hover text of the Text message.
+  Hover: 'This Message will send you to our Store'
+
+  # The Linked site if you click on the text message!
+  Site: 'http://example.buycraft.net'
+
+  # The Header of the Store Message.
+  Header: '&7&l&m========================================='
+
+  # The Footer of the Store Message.
+  Footer: '&7&l&m========================================='
+
+
+ChatOptions:
+  # Setting this to true will result in a . after every sentence.
+  point-after-sentence: true
+  # Setting this to true will change the first letter of a message in a capital letter.
+  first-letter-uppercase: true
+  # All UTF Characters will be removed due to this option. (Due to this Wurst update: https://www.wurst-client.tk/news/2016-01-29-Wurst-2-14/, this option disables that!)
+  only-letters-and-numbers:
+    enabled: true
+    message: '&cYou cannot use unicode letters!'
+    replace:
+      # For example: 'Å' is the letter that has to be replaced by 'A'
+      'Å': 'A'
+      'Ä': 'A'
+      'Ö': 'O'
+      'å': 'a'
+      'ä': 'a'
+      'ö': 'o'
+GList:
+  Enabled: true
+  # This is the Format for the /glist command!
+  # Example: Hub (1): Whagwan   (That is being shown by default!)
+  Format: '&6%server% &8(&b%players%&8): &f%playerlist%'
+
+  # The Color code for the PlayerList, this is to avoid some bugs with color codes.
+  PlayerListColor: '&f'
+
+  # This is the Format for the Total Players in the server!
+  # Example: There are 2 players online now! (Default one ;))
+  Total: '&6There are &b%totalnum% &6players online now!'
+
+  # This is the section for the custom /glist.
+  # If you have like 10 SG servers, and you don't want them in your /glist?
+  # Just Enable this and remove the names from the SG servers below!
+  Custom_GList: true
+
+  # The aliases for the /glist.
+  Aliase: 'list'
+
+  # The servers that you want to show in your /glist
+  # You can set 2 servers as one below, the word before the : will being shown in the GList
+  # And you can calculate server players into one. Like, you have 4 hubs, and you want to show it as one,
+  # Then just split the server names with the "," symbol, and the players + player amount will be shown under 1 server.
+  Servers:
+    Hub: 'hub,hub1,hub2'
+    Factions: 'Factions'
+    Skywars: 'Skywars1,Skywars2'
+
+AntiSwear:
+  Enabled: true
+  # Setting the Advanced option to false, won't block that much.
+  # Like you have blocked the word "ass". Setting advanced to true, should block things like
+  # Compass too, advanced to false won't block this!
+  Advanced: false
+  # Message that will be sent on swear. To ignore, set no people to staff or set it to:
+  # StaffMessage:
+  StaffMessage:
+  - '&b%name% &6tried to swear at &b%server%&6, but has been blocked!'
+  - '&bMessage: &6%message%'
+  # Those are the disallowed words.
+  Blocked:
+  - 'Your'
+  - 'Words'
+  # This is the message if someone is swearing.
+  Message: '&cPlease do not swear!'
+  # Let this empty to block the hole message.
+  Replace_With: '****'
+
+AntiCaps:
+  Enabled: true
+  # Maximum percentage of characters in a message allowed to be uppercase
+  Max_Percentage: 25
+  # Minimum length of a message for the plugin to take effect. (Used to prevent false positives such as "Hi" being 50% caps.)
+  Min_Length: 4
+  Message: '&cPlease do not use Caps!'
+
+# The AntiSpam part!
+# This could be buggy!
+AntiSpam:
+  # You can enable // disable antispam here!
+  Enabled: false
+  # How many seconds does players need to wait before they can talk again?
+  # This is in SECONDS!
+  Seconds: 2
+  Message: '&cYou need to wait %time% seconds to talk again.'
+
+# The NoRepeat part will block repeating the same messages!
+Norepeat:
+  # You can enable // disable the norepeat here!
+  Enabled: false
+  Message: '&cPlease do not repeat a message!'
+
+# The MessageLimiter Part will force a max. amount of messages in X amount of time.
+MessageLimiter:
+  # Enable or Disable the MessageLimiter over here.
+  Enabled: true
+  # Set the max amount messages in X amount of seconds (see below)!
+  Max: 10
+  # Set the time of the max amount!
+  Time: 10
+  # Set the message if someone has reached his limit!
+  Message: '&cYou have reached the limit. Max 10 Messages/10 Seconds!'
+
+# The AntiAdvertisment part
+AntiAd:
+  # Should the AntiAd be enabled or not?
+  Enabled: true
+  # Enter the things that need to be replaced by a . when checking if it's an advertiser!
+  Replace-with-dot:
+  - '{.}'
+  - ' . '
+  - '(.)'
+  - '*.*'
+  - '[.]'
+  - '\./'
+  - '/.\'
+  - '/./'
+  - '\.\'
+  - '<.>'
+  - '>.<'
+  - '>.>'
+  - '<.<'
+  - 'dot'
+  Whitelist:
+  - 'www.hypixel.net'
+  - 'pvp.thearchon.net'
+  Message: '&cPlease do not advertise!'
+  # Message that will be sent on advertise. To ignore, set no people to staff or set it to:
+  # StaffMessage:
+  StaffMessage:
+  - '&b%name% &6tried to advertise at &b%server%&6, but has been blocked!'
+  - '&bMessage: &6%message%'

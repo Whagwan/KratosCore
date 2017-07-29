@@ -1,0 +1,5 @@
+name: KratosCore
+main: me.kratoscore.net.bungee.KratosCore
+version: 2.9
+author: Crivity
+softDepends: ['RedisBungee', 'WebServers']
